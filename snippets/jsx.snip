@@ -1,0 +1,29 @@
+snippet react
+        var React = require('react');
+
+snippet createClass
+        var ${1:MyClass} = React.createClass({
+            render: function(){
+                return (
+                    ${2:<div></div>} 
+                )
+            }
+        });
+        module.exports = $1
+
+snippet getInitialState
+        getInitialState: function(){
+            return {
+                ${1}
+            }
+        }
+
+snippet componentDidMount 
+        componentDidMount: function(){
+            ${1}
+        }
+
+snippet method:
+    ${1}: function(){
+        ${2}
+    },

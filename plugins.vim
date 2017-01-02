@@ -1,0 +1,33 @@
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'kien/ctrlp.vim'
+Plugin 'Raimondi/delimitMate'
+Plugin 'skwp/greplace.vim'
+Plugin 'Shougo/neocomplcache.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'garbas/vim-snipmate'
+Plugin 'scrooloose/syntastic'
+Plugin 'bling/vim-airline'
+Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'altercation/vim-colors-solarized'
+Plugin 'christophermca/meta5'
+Plugin 'tpope/vim-fugitive'
+Plugin 'tpope/vim-vinegar'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'pangloss/vim-javascript'
+Plugin 'tpope/vim-sensible'
+Plugin 'tpope/vim-surround'
+Plugin 'joonty/vim-phpunitqf'
+Plugin 'MarcWeber/vim-addon-mw-utils'
+Plugin 'tomtom/tlib_vim'
+Plugin 'honza/vim-snippets'
+Plugin 'Shougo/neosnippet.vim'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'mxw/vim-jsx'
+Plugin 'vim-scripts/HTML-AutoCloseTag'
+"Plugin 'Shougo/vimproc.vim'
+"Plugin 'Shougo/unite.vim'
+"Plugin 'm2mdas/phpcomplete-extended'
+
+call vundle#end() 
