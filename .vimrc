@@ -1,4 +1,5 @@
 set nocompatible 
+set encoding=utf-8
 
 so ~/.vim/plugins.vim
 
@@ -29,6 +30,8 @@ let NERDTreeChDirMode=2
 nnoremap <C-n> :NERDTreeToggle .<CR>
 nnoremap <C-_> :call NERDComment(0,"toggle")<CR>
 vnoremap <C-_> :call NERDComment(0,"toggle")<CR>
+
+let g:NERDTreeDirArrows=0
 
 " Close nerd tree on open
 let NERDTreeQuitOnOpen=1
