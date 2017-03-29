@@ -12,6 +12,9 @@ let mapleader = ","
 set relativenumber 
 set number   
 
+" Keep 5 lines around current position
+:set scrolloff=5
+
 " XTerm Title
 set title
 
@@ -23,7 +26,9 @@ nmap <CR> :a<CR><CR>.<CR>
 " Ctrl-E for Nerd Tree
 "set autochdir
 let NERDTreeChDirMode=2
-nnoremap <C-e> :NERDTreeToggle .<CR>
+nnoremap <C-n> :NERDTreeToggle .<CR>
+nnoremap <C-_> :call NERDComment(0,"toggle")<CR>
+vnoremap <C-_> :call NERDComment(0,"toggle")<CR>
 
 " Close nerd tree on open
 let NERDTreeQuitOnOpen=1
@@ -99,6 +104,19 @@ nnoremap <leader>R :ChromeReload<cr>
 nnoremap <leader>s :source ~/.vimrc<cr>
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
+" Open Same File Without Git Changes
+nnoremap <leader>j :set syntax=js<cr>
+nnoremap <leader>p :set syntax=php<cr>
+
+function! GitOpenMasterFile()
+    let oldsyntax=&syntax
+    vnew 
+    read ! git show master:#
+    let &syntax=oldsyntax
+    call feedkeys("gg")
+endfunction
+
+nnoremap <leader>o :call GitOpenMasterFile()<cr>
 
 nnoremap vrc :e ~/.vimrc<cr>
 
@@ -186,7 +204,7 @@ nmap <leader>la :e app/Console/Kernel.php<cr>
 
 set linespace=3
 if has('gui_running')
-    set guifont=Inconsolata:h18
+    set guifont=Inconsolata:h16
 endif
 
 " Theme
@@ -194,3 +212,4 @@ syntax enable
 colorscheme meta5 
 "colorscheme solarized
 set background=dark
+
