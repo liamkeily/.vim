@@ -196,10 +196,6 @@ let g:neosnippet#snippets_directory='~/.vim/snippets'
 set backupdir=~/.vim/backup//
 set directory=~/.vim/swap//
 
-" Laravel 4
-nmap <leader>l4r :e app/routes.php<cr>
-nmap <leader>l4a :e app/start/artisan.php<cr>
-
 " Laravel 5
 nmap <leader>lr :e app/Http/routes.php<cr>
 nmap <leader>le :e .env<cr>
@@ -216,3 +212,10 @@ colorscheme meta5
 "colorscheme solarized
 set background=dark
 
+
+" Projects
+let g:project_use_nerdtree = 1
+set rtp+=~/.vim/bundle/vim-project/
+call project#rc("~/Projects")
+
+so ~/Projects/projects.vim
