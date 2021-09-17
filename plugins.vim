@@ -32,7 +32,7 @@ Plugin 'vim-scripts/HTML-AutoCloseTag'
 Plugin 'shawncplus/phpcomplete.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'fatih/vim-go'
-Plugin 'ludovicchabant/vim-gutentags'
+"Plugin 'ludovicchabant/vim-gutentags'
 "Plugin 'amiorin/vim-project'
 
 call vundle#end() 
