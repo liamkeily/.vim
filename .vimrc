@@ -214,8 +214,8 @@ set background=dark
 
 
 " Projects
-let g:project_use_nerdtree = 1
-set rtp+=~/.vim/bundle/vim-project/
-call project#rc("~/Projects")
+"let g:project_use_nerdtree = 1
+"set rtp+=~/.vim/bundle/vim-project/
+"call project#rc("~/Projects")
 
-so ~/Projects/projects.vim
+"so ~/Projects/projects.vim
