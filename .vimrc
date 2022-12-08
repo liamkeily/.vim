@@ -1,16 +1,20 @@
-" Theme
-syntax enable
-colorscheme meta5 
-set background=dark
-
 " Plugins
 so ~/.vim/plugins.vim
+
+" Theme
+syntax enable
+"colorscheme gruvbox
+"set background=dark
+autocmd vimenter * ++nested colorscheme gruvbox
 
 " Basic
 set nocompatible 
 set encoding=utf-8
 syntax on
 filetype plugin indent on
+
+" Unsaved changes
+set confirm
 
 " Leader Key
 let mapleader = ","
@@ -32,13 +36,6 @@ set expandtab
 " XTerm Title
 set title
 
-" Nerd Tree (Toggle with CTRL+N)
-nnoremap <C-n> :NERDTreeToggle .<CR>
-
-" CtrlP
-"let g:ctrlp_working_path_mode = 0
-let g:ctrlp_custom_ignore = '\v[\/](storage|node_modules|target|dist)|(\.(swp|ico|git|svn))$'
-
 " Dont ask to save changes when opening a new buffer
 set hidden
 
@@ -55,7 +52,9 @@ set autoindent
 " Enable Mouse
 set mouse=a
 
-" Buffer management using CTRL + H, L, K
+" Ctrl bindings
+nnoremap <C-n> :NERDTreeToggle .<CR>
+nnoremap <C-p> :FZF<CR>
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprevious<CR>
 nmap <C-k> :bd<CR>
@@ -66,11 +65,15 @@ let g:airline#extensions#tabline#enabled = 1
 " Write as root Trick
 cmap w!! w !sudo tee %
 
-nnoremap <leader>b :buffers<cr>
+" Mappings
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
 
-" Dont put swap files in project dir
-set backupdir=~/.vim/backup//
-set directory=~/.vim/swap//
+" Float term
+noremap  <leader>t  :FloatermToggle<CR>i
+noremap! <leader>t  <Esc>:FloatermToggle<CR>i
+tnoremap <leader>t  <C-\><C-n>:FloatermToggle<CR>
 
+" Dont put swap files in project dir
+set backupdir=~/.vim/backup/
+set directory=~/.vim/swap/
