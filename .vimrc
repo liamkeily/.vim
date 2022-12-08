@@ -30,8 +30,8 @@ set tabstop=4
 set softtabstop=4
 set expandtab
 
-" Keep 5 lines around current position
-:set scrolloff=5
+" Keep lines around current position
+:set scrolloff=8
 
 " XTerm Title
 set title
@@ -68,6 +68,7 @@ cmap w!! w !sudo tee %
 " Mappings
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
+nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
 " Float term
 noremap  <leader>t  :FloatermToggle<CR>i
