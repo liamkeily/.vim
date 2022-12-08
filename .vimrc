@@ -76,12 +76,16 @@ set autoindent
 " Enable Mouse
 set mouse=a
 
+" Nerd Tree
+let NERDTreeQuitOnOpen=1
+
 " Ctrl bindings
-nnoremap <C-n> :NERDTreeToggle .<CR>
+nnoremap <silent> <expr> <C-n> g:NERDTree.IsOpen() ? "\:NERDTreeClose<CR>" : bufexists(expand('%')) ? "\:NERDTreeFind<CR>" : "\:NERDTree<CR>"
 nnoremap <C-p> :FZF<CR>
 nmap <C-l> :bnext<CR>
 nmap <C-h> :bprevious<CR>
 nmap <C-k> :bd<CR>
+
 
 " Buffer tabs at the top
 let g:airline#extensions#tabline#enabled = 1
@@ -93,6 +97,7 @@ cmap w!! w !sudo tee %
 nnoremap <leader>v :vsplit<cr>
 nnoremap <leader>h :split<cr>
 nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
+nnoremap <Leader>n :NERDTreeFind<CR>
 
 " Float term
 noremap  <leader>t  :FloatermToggle<CR>i
