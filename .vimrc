@@ -12,6 +12,7 @@ Plug 'voldikss/vim-floaterm' " Create a floating terminal by pressing F12
 Plug 'zivyangll/git-blame.vim' " Git blame in status bar
 Plug 'tommcdo/vim-lion' " For aligning =
 Plug 'tpope/vim-commentary' " For commenting out code
+Plug 'bogado/file-line' " File:line support
 
 if has('nvim')
     Plug 'mhinz/vim-startify' " Vim start screen (look into https://github.com/glepnir/dashboard-nvim)
@@ -27,8 +28,6 @@ call plug#end()
 
 " Theme
 syntax enable
-"colorscheme gruvbox
-"set background=dark
 autocmd vimenter * ++nested colorscheme gruvbox
 
 " Basic
@@ -36,6 +35,7 @@ set nocompatible
 set encoding=utf-8
 syntax on
 filetype plugin indent on
+set mouse=a
 
 " Unsaved changes
 set confirm
@@ -53,6 +53,7 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 set expandtab
+set autoindent
 
 " Keep lines around current position
 :set scrolloff=8
@@ -69,12 +70,6 @@ set smartcase
 
 " Prevent annoying beeping
 set visualbell
-
-" Automatically indent
-set autoindent
-
-" Enable Mouse
-set mouse=a
 
 " Nerd Tree
 let NERDTreeQuitOnOpen=1
@@ -94,18 +89,12 @@ let g:airline#extensions#tabline#enabled = 1
 cmap w!! w !sudo tee %
 
 " Mappings
-nnoremap <leader>v :vsplit<cr>
-nnoremap <leader>h :split<cr>
 nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
-nnoremap <Leader>n :NERDTreeFind<CR>
 
 " Float term
 noremap  <leader>t  :FloatermToggle<CR>i
 noremap! <leader>t  <Esc>:FloatermToggle<CR>i
 tnoremap <leader>t  <C-\><C-n>:FloatermToggle<CR>
-
-" Lion alignment settings
-let b:lion_squeeze_spaces = 1
 
 " Dont put swap files in project dir
 set backupdir=~/.vim/backup/
