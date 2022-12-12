@@ -18,6 +18,7 @@ call plug#end()
 
 " Theme
 autocmd vimenter * ++nested colorscheme gruvbox
+set background=dark
 
 " Settings
 set nocompatible 
