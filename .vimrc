@@ -23,7 +23,7 @@ set background=dark
 
 " Settings
 set nocompatible 
-set encoding=utf-8
+set encoding=UTF-8
 set title
 set mouse=a
 set confirm
