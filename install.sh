@@ -5,5 +5,8 @@ else
     mv ~/.vimrc ~/.vimrc.old
     ln -s ~/.vim/.vimrc ~/.vimrc
 fi
+
+cd ~/.vim
 echo "Installing Plugins"
 vim +PlugInstall +qall
+vim +CocInstall coc-phpactor +qall

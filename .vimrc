@@ -14,6 +14,7 @@ call plug#begin()
     Plug 'bogado/file-line' " File:line support
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete
     Plug 'phpactor/phpactor' , {'do': 'composer install', 'for': 'php'} " Auto complete for php
+    Plug 'phpactor/coc-phpactor'
 call plug#end() 
 
 " Theme
