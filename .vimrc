@@ -15,6 +15,7 @@ call plug#begin()
     Plug 'neoclide/coc.nvim', {'branch': 'release'} " Auto complete
     Plug 'phpactor/phpactor' , {'do': 'composer install', 'for': 'php'} " Auto complete for php
     Plug 'phpactor/coc-phpactor'
+    Plug 'jwalton512/vim-blade' " Laravel blade support
 call plug#end() 
 
 " Theme
@@ -38,7 +39,7 @@ syntax on
 filetype plugin indent on
 set relativenumber 
 set number   
-set smartindent
+set cindent 
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
